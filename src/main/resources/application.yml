@@ -1,0 +1,64 @@
+com.mangogo.test1:
+  - 111
+  - 222
+  - 333
+com.mangogo.test2:
+  "World"
+
+server:
+  port: 8080
+  servlet:
+    context-path: /
+spring:
+  datasource:
+    hikari:
+      auto-commit: true
+      connection-test-query: SELECT 1
+      connection-timeout: 30000
+      idle-timeout: 30000
+      max-lifetime: 1800000
+      maximum-pool-size: 15
+      minimum-idle: 5
+      pool-name: HikariCP
+    password: 1234
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:mysql://localhost:3306/hibernate_jpa?characterEncoding=utf-8&serverTimezone=UTC
+    username: root
+  devtools:
+    livereload:
+      enabled: true
+    restart:
+      enabled: false
+  freemarker:
+    charset: UTF-8
+    content-type: text/html; charset=utf-8
+    suffix: .ftl
+    template-loader-path: classpath:/templates
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: true
+    properties:
+      hibernate:
+        format_sql: 'true  #是否格式化sql语句，默认是false  '
+    show-sql: true
+  redis:
+    database: 0
+    host: 47.104.176.200
+    jedis:
+      pool:
+        max-active: 50
+        max-idle: 50
+        max-wait: -1
+        min-idle: 5
+    password: 1234
+    port: 6379
+    timeout: 3000
+  resources:
+    static-locations: classpath:/static
+  session:
+    redis:
+      flush-mode: on_save
+      namespace: spring:session
+    store-type: redis
+    timeout: 3000
