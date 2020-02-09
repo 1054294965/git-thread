@@ -1,5 +1,7 @@
 package com.example.accessingdatamysql.entity;
 
+import lombok.extern.slf4j.Slf4j;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,6 +11,7 @@ import java.util.List;
  * 同时 判断跟递减之间没有原子性
  * Created by 阿杜 on 2017/12/9.
  */
+@Slf4j
 public class TicketSell1 {
     private static List<String> tickets = new ArrayList();
 
@@ -37,5 +40,6 @@ public class TicketSell1 {
         for(int i=0; i<100; i++){
             new BuySocket().start();
         }
+
     }
 }

@@ -34,11 +34,10 @@ public class LoginController {
     @Autowired
     private CacheServiceImpl cacheService;
 
-    @Value("${com.mangogo.test1}")
-    private Collection list;
+
     @RequestMapping("/login")
     public String login(){
-        System.out.println(list);
+
             return "success";
     }
 }

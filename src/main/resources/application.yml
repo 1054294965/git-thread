@@ -1,9 +1,4 @@
-com.mangogo.test1:
-  - 111
-  - 222
-  - 333
-com.mangogo.test2:
-  "World"
+
 
 server:
   port: 8080

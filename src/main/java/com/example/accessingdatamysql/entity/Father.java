@@ -1,26 +1,32 @@
 package com.example.accessingdatamysql.entity;
 
+import lombok.extern.slf4j.Slf4j;
+
+import java.io.PrintStream;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-
+@Slf4j
 public class Father {
-    public void chinese(){
-        System.out.println("汉语");
-    }
-
     public static void main(String[] args) {
-        new Son().chinese();
-
-        Father father=new Son();
-    }
-
-}
-class Son extends Father{
-    public void english(){
-        ExecutorService newCachedThreadPool = Executors.newCachedThreadPool();
-
-
-
+        System.out.println(dd());
 
     }
+    public static String print(){
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return "33";
+    }
+    public static String dd(){
+        System.out.println("start");
+
+        log.info(print());
+        System.out.println("end");
+        return "success";
+    }
+
+
 }
+
